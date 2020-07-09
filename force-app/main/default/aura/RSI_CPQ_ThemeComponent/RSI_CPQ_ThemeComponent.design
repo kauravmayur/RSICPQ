@@ -1,0 +1,6 @@
+<design:component label="RSI - CPQ Portal Theme">
+    <design:attribute name="headerBGColor"		label="Title Menu Background Color in Hexadecimal code"/>
+    <design:attribute name="headerTextStyling"	label="Header Text Styling in CSS (Default = font-size: x-large; font-weight: bold; color: #ffffff)"/>
+    <design:attribute name="bgGradientStart"	label="Background Color Gradient Start in Hexadecimal code"/>
+    <design:attribute name="bgGradientEnd"		label="Background Color Gradient End in Hexadecimal code"/>
+</design:component>

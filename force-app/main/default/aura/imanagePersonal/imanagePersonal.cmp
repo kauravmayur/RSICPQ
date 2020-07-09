@@ -1,0 +1,97 @@
+<aura:component  controller="imanageController" implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global" >
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="contacts" type="List"/>
+    <aura:attribute name="screenWidth" type="decimal"/>
+    <div style="{! 'width:'+v.screenWidth*80/100+'px;padding-left: 50px;'}">
+        <div class="slds-grid slds-grid_vertical">
+            <div class="slds-col">
+                
+                <div class="slds-col slds-p-horizontal_medium">
+                    
+                    <div class="slds-text-heading_medium" style="float: left;">
+                        <div class="slds-text-heading_medium"><b>{!$Label.c.Imanage_staff}</b></div>
+                    </div>
+                    
+                    <div class="slds-text-heading_medium" style="float: right;padding-left: 100px;">
+                        <lightning:buttonMenu class="slds-text-heading_medium menuItemWidth" label="Company lorem ipsum dolor" alternativeText="Show menu">
+                            <lightning:menuItem class="slds-text-heading_medium menuItemWidth" value="MenuItemOne" label="Company ipsum dolor sit" />
+                            <lightning:menuItem class="slds-text-heading_medium" value="MenuItemTwo" label="Company ipsum dolor sit" />
+                            <lightning:menuItem class="slds-text-heading_medium" value="MenuItemThree" label="Company ipsum dolor sit" />
+                            <lightning:menuItem class="slds-text-heading_medium" value="MenuItemFour" label="Company ipsum dolor sit" />
+                            <lightning:menuItem class="slds-text-heading_medium" value="MenuItemFive" label="Company ipsum dolor sit" />
+                            <lightning:menuItem class="slds-text-heading_medium" value="MenuItemSix" label="Company ipsum dolor sit" />
+                            <lightning:menuItem class="slds-text-heading_medium" value="MenuItemSeven" label="Company ipsum dolor sit" />
+                            <lightning:menuItem class="slds-text-heading_medium" value="MenuItemEight" label="Company ipsum dolor sit" />
+                        </lightning:buttonMenu>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="slds-col">
+                <br/><br/><br/>
+            </div>
+        </div>
+        <div class="slds-grid slds-grid_vertical">
+            <div class="slds-col">
+                <!--<div class="slds-text-heading_large"><b>New Documents</b></div>-->
+            </div>
+            <div class="slds-col" style="padding-top: 25px; padding-bottom: 20px">
+                <a class="slds-button slds-button_brand" href="javascript:void(0);">{!$Label.c.Imanage_All_categories}</a>
+                <a class="slds-button slds-button_outline-brand" href="javascript:void(0);">{!$Label.c.Imanage_Wills_and_Codiciles}</a>
+                <a class="slds-button slds-button_outline-brand" href="javascript:void(0);">{!$Label.c.Imanage_Marriage_Contract}</a>
+                <a class="slds-button slds-button_outline-brand" href="javascript:void(0);">{!$Label.c.Imanage_Protection_Mandates}</a>
+            </div>
+            <div class="slds-col" >
+                <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                    <thead>
+                        <tr class="slds-line-height_reset">
+                            <th class="" scope="col">
+                                <div class="slds-truncate" title="Document name">{!$Label.c.Imanage_Document_name}</div>
+                            </th>
+                            <th class="" scope="col">
+                                <div class="slds-truncate" title="Categories">{!$Label.c.Imanage_Categories}</div>
+                            </th>
+                            <th class="" scope="col">
+                                <div class="slds-truncate" title="Added By">{!$Label.c.Imanage_Added_By}</div>
+                            </th>
+                            <th class="" scope="col">
+                                <div class="slds-truncate" title="Date Added">{!$Label.c.Imanage_Date_Added}</div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <aura:iteration items="{!v.contacts}" start="0" end="6" var="con">
+                            <tr class="slds-hint-parent">
+                                <th data-label="Document name" scope="row">
+                                    <div class="slds-truncate" title="{!con.Name}">
+                                        <a href="javascript:void(0);" tabindex="-1">{!con.Name}</a>
+                                    </div>
+                                </th>
+                                <td data-label="Confidence">
+                                    <div class="slds-truncate" title="{!con.LeadSource}">{!con.LeadSource}</div>
+                                </td>
+                                <td data-label="Contact">
+                                    <div class="slds-truncate" title="{!con.Owner.Name}">
+                                        <a href="javascript:void(0);" tabindex="-1">{!con.Owner.Name}</a>
+                                    </div>
+                                </td>
+                                <td data-label="Prospecting">
+                                    <div class="slds-truncate" title="{!con.CreatedDate}">
+                                        <ui:outputDate value="{!con.CreatedDate}"/>
+                                    </div>
+                                </td>
+                                <td data-label="Prospecting">
+                                    <div class="slds-truncate" title="Favorite">
+                                        <lightning:icon iconName="utility:favorite" size="x-small" alternativeText="Favorite" title="Favorite" />
+                                    </div>
+                                </td>
+                            </tr>
+                            
+                        </aura:iteration>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</aura:component>

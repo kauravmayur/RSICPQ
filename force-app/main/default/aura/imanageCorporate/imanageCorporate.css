@@ -1,0 +1,41 @@
+.THIS .slds-table{
+    
+    position:absolute;
+    width:80%!important;
+    font-size: initial;
+}
+
+.THIS .slds-table th{
+    padding: 16px !important;
+}
+
+.THIS .slds-table td{
+    padding: 16px !important;
+}
+
+.THIS .slds-grid_vertical{
+    width: max-content;
+}
+.THIS .slds-button_outline-brand{
+    border-radius: 25px!important;
+    border-color: rgb(0, 0, 0)!important;
+    color: rgb(0, 0, 0)!important;
+}
+.THIS .slds-button_brand{
+    border-radius: 25px;
+    border-color: rgb(212, 212, 212)!important;
+    background-color: rgb(212, 212, 212)!important;
+    color: rgb(0, 0, 0)!important;
+}
+.THIS .slds-button {
+    color: rgb(0, 0, 0)!important;
+}
+.THIS .slds-button:active{
+    text-decoration: solid!important;
+    border-color: none!important;
+}
+
+.THIS .slds-button:visited{
+	text-decoration: solid!important;
+    border-color: none!important;    
+}

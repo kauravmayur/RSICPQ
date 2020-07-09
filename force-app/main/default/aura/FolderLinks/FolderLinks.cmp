@@ -1,0 +1,40 @@
+<aura:component >
+    <aura:attribute name="MatterName" type="String" />
+    <aura:attribute name="sObjectName" type="String"/>
+    <aura:if isTrue="{!equals(v.sObjectName,'Case')}">
+        <div class="slds-grid slds-wrap">
+            
+            <div class="slds-col slds-size_1-of-1 slds-large-size_2-of-12" style="width: 70px;">
+                <span><a style="color:#b3b3b3;">All Files</a> &nbsp; ></span>
+            </div>
+            <div class="slds-col slds-size_1-of-1 slds-large-size_2-of-12" style="width: 70px;">
+                <span><a  style="color:#b3b3b3;">Account</a> ></span>
+            </div>
+            <div class="slds-col slds-size_1-of-1 slds-large-size_2-of-12" style="width: 60px;">
+                <span><a style="color:#b3b3b3;">Matter</a> ></span>
+            </div>
+            <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12">
+                <span>
+                    <b><a style="color:#000000;">{!v.MatterName}</a></b>
+                </span>
+            </div>
+        </div>
+        <aura:set attribute="else">
+            <div class="slds-grid slds-wrap">
+            
+            <div class="slds-col slds-size_1-of-1 slds-large-size_2-of-12" style="width: 70px;">
+                <span><a style="color:#b3b3b3;">All Files</a> &nbsp; ></span>
+            </div>
+            <div class="slds-col slds-size_1-of-1 slds-large-size_2-of-12" style="width: 70px;">
+                <span><a  style="color:#b3b3b3;">Account</a> ></span>
+            </div>
+            <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12">
+                <span>
+                    <b><a style="color:#000000;">{!v.MatterName}</a></b>
+                </span>
+            </div>
+        </div>
+        </aura:set>
+    </aura:if> 
+    
+</aura:component>

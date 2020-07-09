@@ -1,0 +1,178 @@
+<aura:component  controller="imanageController" implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global" >
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="contacts" type="List"/>
+    <aura:attribute name="screenWidth" type="decimal"/>
+    <div style="{! 'width:'+v.screenWidth*80/100+'px;padding-left: 50px;'}">
+        <div class="slds-grid slds-grid_vertical">
+            <div class="slds-col">
+                <div class="slds-text-heading_medium"><b>{!$Label.c.Imanage_Contacts}</b></div>
+            </div>
+            <div class="slds-col">
+                <br/><br/>
+            </div>
+        </div>
+        <div class="slds-grid slds-grid_vertical">
+            <div class="slds-col">
+                <!--<div class="slds-text-heading_large"><b>New Documents</b></div>-->
+            </div>
+            <div class="slds-col" style="padding-top: 25px; padding-bottom: 20px">
+                <div class="slds-text-heading_medium"><b>{!$Label.c.Imanage_Contacts_BCF}</b></div>
+                
+            </div>
+            <div class="slds-col" >
+                
+                <ul class="slds-list_horizontal">
+                <aura:iteration items="{!v.contacts}" start="0" end="3" var="con">
+                    <li>
+                    <lightning:card class="cardParent" title="{!con.Owner.Name}">
+                        <aura:set attribute="actions">
+                            <lightning:icon iconName="utility:record" size="xx-small" alternativeText="record" title="record" />
+                        </aura:set>
+                        <div class="cardStyle">
+                        </div>
+                        <div class="slds-text-heading_medium"><b>{!con.Name}</b></div>
+                        <div class="slds-text-heading_small" style="padding-top:5px">
+                            <a href="javascript:void(0);" tabindex="-1">
+                                {!con.Email}    
+                            </a>
+                        </div>
+                        <div class="slds-text-heading_small"><b>{!con.Phone}</b></div>
+                        
+                    </lightning:card>
+                    </li>
+                </aura:iteration>
+                </ul>
+            </div>
+            
+        </div>
+        <div class="slds-grid slds-grid_vertical" style="margin-top: 50px;">
+            <div class="slds-col" style="padding-top: 25px;">
+                <div class="slds-text-heading_large"><b>{!$Label.c.Imanage_Other_Contacts}</b></div>
+            </div>
+            <div class="slds-col" style="padding-top: 25px;">
+                <div class="slds-text-heading_small" style="padding-bottom: 10px;"><b>{!$Label.c.Imanage_Accountants}</b></div>
+                <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                    <tbody>
+                        <aura:iteration items="{!v.contacts}" start="0" end="3" var="con">
+                            <tr class="slds-hint-parent">
+                                <th data-label="Document name" scope="row">
+                                    <div class="slds-truncate" title="{!con.Name}">
+                                        <a href="javascript:void(0);" tabindex="-1">{!con.Name}</a>
+                                    </div>
+                                </th>
+                                <td data-label="Confidence">
+                                    <div class="slds-truncate" title="{!con.LeadSource}">{!con.LeadSource}</div>
+                                </td>
+                                <td data-label="Prospecting">
+                                    <div class="slds-truncate" title="{!con.Phone}">
+                                        <ui:outputDate value="{!con.Phone}"/>
+                                    </div>
+                                </td>
+                                <td data-label="Contact">
+                                    <div class="slds-truncate" title="{!con.Email}">
+                                        <a href="javascript:void(0);" tabindex="-1">{!con.Email}</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </aura:iteration>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="slds-grid slds-grid_vertical" style="margin-top: 200px;">
+            <div class="slds-col">
+                <div class="slds-text-heading_small" style="padding-bottom: 10px;"><b>{!$Label.c.Imanage_Bankers}</b></div>
+                <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                    <tbody>
+                        <aura:iteration items="{!v.contacts}" start="0" end="3" var="con">
+                            <tr class="slds-hint-parent">
+                                <th data-label="Document name" scope="row">
+                                    <div class="slds-truncate" title="{!con.Name}">
+                                        <a href="javascript:void(0);" tabindex="-1">{!con.Name}</a>
+                                    </div>
+                                </th>
+                                <td data-label="Confidence">
+                                    <div class="slds-truncate" title="{!con.LeadSource}">{!con.LeadSource}</div>
+                                </td>
+                                <td data-label="Prospecting">
+                                    <div class="slds-truncate" title="{!con.Phone}">
+                                        <ui:outputDate value="{!con.Phone}"/>
+                                    </div>
+                                </td>
+                                <td data-label="Contact">
+                                    <div class="slds-truncate" title="{!con.Email}">
+                                        <a href="javascript:void(0);" tabindex="-1">{!con.Email}</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </aura:iteration>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div class="slds-grid slds-grid_vertical" style="margin-top: 200px;">
+            <div class="slds-col" >
+                <div class="slds-text-heading_small" style="padding-bottom: 10px;"><b>{!$Label.c.Imanage_Planners}</b></div>
+                <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                    <tbody>
+                        <aura:iteration items="{!v.contacts}" start="0" end="2" var="con">
+                            <tr class="slds-hint-parent">
+                                <th data-label="Document name" scope="row">
+                                    <div class="slds-truncate" title="{!con.Name}">
+                                        <a href="javascript:void(0);" tabindex="-1">{!con.Name}</a>
+                                    </div>
+                                </th>
+                                <td data-label="Confidence">
+                                    <div class="slds-truncate" title="{!con.LeadSource}">{!con.LeadSource}</div>
+                                </td>
+                                <td data-label="Prospecting">
+                                    <div class="slds-truncate" title="{!con.Phone}">
+                                        <ui:outputDate value="{!con.Phone}"/>
+                                    </div>
+                                </td>
+                                <td data-label="Contact">
+                                    <div class="slds-truncate" title="{!con.Email}">
+                                        <a href="javascript:void(0);" tabindex="-1">{!con.Email}</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </aura:iteration>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div class="slds-grid slds-grid_vertical" style="margin-top: 150px;">
+            <div class="slds-col">
+                <div class="slds-text-heading_small" style="padding-bottom: 10px;"><b>{!$Label.c.Imanage_External_Lawyers}</b></div>
+                <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                    <tbody>
+                        <aura:iteration items="{!v.contacts}" start="0" end="2" var="con">
+                            <tr class="slds-hint-parent">
+                                <th data-label="Document name" scope="row">
+                                    <div class="slds-truncate" title="{!con.Name}">
+                                        <a href="javascript:void(0);" tabindex="-1">{!con.Name}</a>
+                                    </div>
+                                </th>
+                                <td data-label="Confidence">
+                                    <div class="slds-truncate" title="{!con.LeadSource}">{!con.LeadSource}</div>
+                                </td>
+                                <td data-label="Prospecting">
+                                    <div class="slds-truncate" title="{!con.Phone}">
+                                        <ui:outputDate value="{!con.Phone}"/>
+                                    </div>
+                                </td>
+                                <td data-label="Contact">
+                                    <div class="slds-truncate" title="{!con.Email}">
+                                        <a href="javascript:void(0);" tabindex="-1">{!con.Email}</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </aura:iteration>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</aura:component>

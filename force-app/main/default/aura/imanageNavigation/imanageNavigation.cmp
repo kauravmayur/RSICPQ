@@ -1,0 +1,121 @@
+<aura:component controller="imanageController"  implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global" >
+    <aura:attribute name="selectedItem" type="String" />
+    <aura:attribute name="screenWidth" type="decimal"/>
+    <aura:attribute name="userInitials" type="String"/>
+    <aura:attribute name="options" type="String[]" default="Home,Profile"/>
+    <aura:attribute name="isOpen" type="boolean" default="false"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="selectedLookUpRecord" type="sObject" default="{}"/>
+    
+    <div class="slds-grid slds-grid_pull-padded-medium">
+        <div class="slds-col slds-p-horizontal_medium">
+            <div class="slds-grid slds-grid_vertical">
+                <div class="slds-col">
+                    <table>
+                        <tr>
+                            <td >
+                                <lightning:icon iconName="utility:record" size="large" alternativeText="record" title="record" />
+                            </td>
+                            <td>
+                                <b style="font-size: xx-large;">BCF</b>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="slds-col">
+                    <span></span>
+                </div>
+                <div class="slds-col" style="padding-top: 150px; width: max-content;">
+                    <lightning:verticalNavigation onbeforeselect="{! c.handleBeforeSelect }"
+                                                  selectedItem="{! v.selectedItem }" class="verticalNavigation">
+                        <lightning:verticalNavigationSection label="Reports" >
+                            <lightning:verticalNavigationItem label="{!$Label.c.Imanage_Overview}" name="{!$Label.c.Imanage_Overview}" />
+                            <lightning:verticalNavigationItem label="{!$Label.c.Imanage_staff}" name="{!$Label.c.Imanage_staff}" />
+                            <lightning:verticalNavigationItem label="{!$Label.c.Imanage_Corporate}" name="{!$Label.c.Imanage_Corporate}" />
+                            <lightning:verticalNavigationItem label="{!$Label.c.Imanage_Billing}" name="{!$Label.c.Imanage_Billing}" />
+                            <lightning:verticalNavigationItem label="{!$Label.c.Imanage_Contacts}" name="{!$Label.c.Imanage_Contacts}" />
+                        </lightning:verticalNavigationSection>
+                    </lightning:verticalNavigation>
+                </div>
+            </div>
+        </div>
+        <div class="slds-col slds-p-horizontal_medium">
+            
+            <div class="slds-text-heading_medium" style="float: right;padding-left: 10px;">
+                <a class="slds-button slds-button_brand" title="Mario Charpentier" href="javascript:void(0);" style="border-radius: 25px;border-color: rgb(212, 212, 212)!important;background-color: rgb(212, 212, 212)!important;color: rgb(0, 0, 0)!important;height: 30px;width: 30px;">
+                    <lightning:icon onclick="{!c.openModel}" iconName="utility:search" size="xx-small" alternativeText="search" title="search" />
+                </a>
+            </div>
+            
+            <div class="slds-text-heading_medium" style="float: right;">
+                <a class="slds-button slds-button_brand" title="Mario Charpentier" href="javascript:void(0);" style="border-radius: 25px;border-color: rgb(212, 212, 212)!important;background-color: rgb(212, 212, 212)!important;color: rgb(0, 0, 0)!important;height: 30px;width: 30px;">
+                    <div class="slds-text-title_caps">
+                        
+                        <ui:menu class="slds-dropdown__list">
+                            <ui:menuTriggerLink class="slds-dropdown__list" aura:id="trigger" label="{!v.userInitials}"/>
+                            <ui:menuList  class="actionMenu" aura:id="actionMenu">
+                                <aura:iteration items="{!v.options}" var="itemLabel">
+                                    <ui:actionMenuItem class="slds-dropdown__list" aura:id="actionMenuItem" label="{!itemLabel}" click="{!c.onProfileClick}"/>
+                                </aura:iteration>
+                            </ui:menuList>
+                        </ui:menu>
+                    </div>
+                </a>
+            </div>
+            <!--
+            <div class="slds-text-heading_medium" style="float: right;padding-right: 10px;">
+                <c:customLookup objectAPIName="Contact" selectedRecord="{!v.selectedLookUpRecord}" label="Account Name"/>
+            </div>
+   -->
+            <aura:if isTrue="{!v.selectedItem == $Label.c.Imanage_Overview }">
+                <c:imanageProjectComponent/>
+            </aura:if> 
+            <aura:if isTrue="{!v.selectedItem == $Label.c.Imanage_staff }">
+                <c:imanagePersonal/>
+            </aura:if> 
+            <aura:if isTrue="{!v.selectedItem == $Label.c.Imanage_Corporate }">
+                <c:imanageCorporate/>
+            </aura:if> 
+            <aura:if isTrue="{!v.selectedItem == $Label.c.Imanage_Billing }">
+                <c:imanageBilling/>
+            </aura:if> 
+            <aura:if isTrue="{!v.selectedItem == $Label.c.Imanage_Contacts}">
+                <c:imanageContacts/>
+            </aura:if> 
+            <aura:if isTrue="{!v.selectedItem == 'Profile' }">
+                <c:imanageProfile/>
+            </aura:if>
+            <aura:if isTrue="{!v.selectedItem == 'Home' }">
+                <c:imanageProjectComponent/>
+            </aura:if>
+        </div>
+    </div>
+    
+    <div class="slds-m-around_xx-large">
+        <!--Use aura:if tag to display Model Box, on the bese of conditions. [isOpen boolean attribute] -->   
+        <aura:if isTrue="{!v.isOpen}">
+            
+            <!--###### MODAL BOX Start######--> 
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <header class="slds-modal__header">
+                        <lightning:buttonIcon iconName="utility:close"
+                                              onclick="{! c.closeModel }"
+                                              alternativeText="close"
+                                              variant="bare-inverse"
+                                              class="slds-modal__close"/>
+                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">File Search</h2>
+                    </header>
+                    <!--###### MODAL BOX BODY Part Start######-->
+                    <div class="slds-modal__content slds-p-around_medium" style="height:210px;" id="modal-content-id-1">
+                        <c:customLookup objectAPIName="Contact" selectedRecord="{!v.selectedLookUpRecord}" label="Account Name"/>
+                    </div>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+            <!--###### MODAL BOX Part END Here ######-->
+            
+        </aura:if>
+    </div>
+    
+</aura:component>

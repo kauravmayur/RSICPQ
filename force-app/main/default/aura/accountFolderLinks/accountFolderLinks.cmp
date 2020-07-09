@@ -1,0 +1,53 @@
+<aura:component >
+    <div class="slds-dropdown-trigger slds-dropdown-trigger_click slds-is-open">
+        <button class="slds-button slds-button_icon slds-button_icon-border-filled" aria-haspopup="true" title="Show More">
+            <lightning:buttonIcon iconName="utility:down"  size="small" variant="bare" alternativeText="Example" />
+            <span class="slds-assistive-text">Show More</span>
+        </button>
+        <div class="slds-dropdown slds-dropdown_left">
+            <ul class="slds-dropdown__list" role="menu" aria-label="Show More">
+                <li class="slds-dropdown__item" role="presentation">
+                    <a href="javascript:void(0);" role="menuitem" tabindex="0">
+                        <span class="slds-truncate" title="Menu Item One">Menu Item One</span>
+                    </a>
+                </li>
+                <li class="slds-dropdown__item" role="presentation">
+                    <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                        <span class="slds-truncate" title="Menu Item Two">Menu Item Two</span>
+                    </a>
+                </li>
+                <li class="slds-dropdown__item slds-has-submenu" role="presentation">
+                    <a role="menuitem" href="javascript:void(0);" aria-haspopup="true" aria-expanded="true" tabindex="-1">
+                        <span class="slds-truncate" title="Menu Item Three">Menu Item Three</span>
+                        <lightning:buttonIcon iconName="utility:down"  size="small" variant="bare" alternativeText="Example" />
+                    </a>
+                    <div class="slds-dropdown slds-dropdown_submenu slds-dropdown_submenu-right">
+                        <ul class="slds-dropdown__list" role="menu" aria-label="Menu Item Three">
+                            <li class="slds-dropdown__item" role="presentation">
+                                <a href="javascript:void(0);" role="menuitem" tabindex="0">
+                                    <span class="slds-truncate" title="Submenu Item One">Submenu Item One</span>
+                                </a>
+                            </li>
+                            <li class="slds-dropdown__item" role="presentation">
+                                <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                                    <span class="slds-truncate" title="Submenu Item Two">Submenu Item Two</span>
+                                </a>
+                            </li>
+                            <li class="slds-dropdown__item" role="presentation">
+                                <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                                    <span class="slds-truncate" title="Submenu Item Three">Submenu Item Three</span>
+                                </a>
+                            </li>
+                            <li class="slds-has-divider_top-space" role="separator"></li>
+                            <li class="slds-dropdown__item" role="presentation">
+                                <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                                    <span class="slds-truncate" title="Submenu Item Four">Submenu Item Four</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</aura:component>

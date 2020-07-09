@@ -1,0 +1,72 @@
+<aura:component  controller="imanageController" implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global" >
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="contacts" type="List"/>
+    <aura:attribute name="users" type="User"/>
+    <aura:attribute name="screenWidth" type="decimal"/>
+    <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+        <tbody>
+            <tr class="slds-hint-parent">
+                <td data-label="Confidence">
+                    <div class="slds-truncate" title="Name">Name</div>
+                </td>
+                <td data-label="Prospecting" style="text-align: end;">
+                    <div class="slds-truncate" title="{!v.users.Name}">
+                        {!v.users.Name}
+                    </div>
+                </td>
+            </tr>
+            <tr class="slds-hint-parent">
+                <td data-label="Confidence">
+                    <div class="slds-truncate" title="Name">Professional Email Address</div>
+                </td>
+                <td data-label="Prospecting" style="text-align: end;">
+                    <div class="slds-truncate" title="{!v.users.Email}">
+                        {!v.users.Email}
+                    </div>
+                </td>
+            </tr>
+            <tr class="slds-hint-parent">
+                <td data-label="Confidence">
+                    <div class="slds-truncate" title="Name">Work Telephone Number</div>
+                </td>
+                <td data-label="Prospecting" style="text-align: end;">
+                    <div class="slds-truncate" title="{!v.users.Phone}">
+                        {!v.users.Phone}
+                    </div>
+                </td>
+            </tr>
+            <tr class="slds-hint-parent">
+                <td data-label="Confidence">
+                    <div class="slds-truncate" title="Name">Cell Phone Number</div>
+                </td>
+                <td data-label="Prospecting" style="text-align: end;">
+                    <div class="slds-truncate" title="{!v.users.Phone}">
+                        {!v.users.Phone}
+                    </div>
+                </td>
+            </tr>
+            <tr class="slds-hint-parent">
+                <td data-label="Confidence">
+                    <div class="slds-truncate" title="Name">Address at Work</div>
+                </td>
+                <td data-label="Prospecting" style="text-align: end;">
+                    <div class="slds-truncate" title="{!v.users.Name}">
+                        1301 Avenue of the Americas<br/> 
+                        New York, NY 10019<br/>
+                        USA
+                    </div>
+                </td>
+            </tr>
+            <tr class="slds-hint-parent">
+                <td data-label="Confidence">
+                    <div class="slds-truncate" title="Name">Password</div>
+                </td>
+                <td data-label="Prospecting" style="text-align: end;">
+                    <div class="slds-truncate" title="{!v.users.Name}">
+                        {!v.users.Name}
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</aura:component>

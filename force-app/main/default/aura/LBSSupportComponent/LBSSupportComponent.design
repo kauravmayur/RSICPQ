@@ -1,0 +1,10 @@
+<design:component>
+    <!--Attributes-->
+	<design:attribute name="ContactNumber" label="Contact Number Field Label" description="Enter Contact Number Field Label."/>
+    <design:attribute name="ContactTeleNumber" label="Contact Number Field Value" description="Enter Company's Contact Number." />
+    <design:attribute name="Email" label="E-Mail Field Label" description="Enter Email Field Label." />
+    <design:attribute name="DisplayEmail" label="E-mail Field Value" description="Enter Company's Email id." />
+    <design:attribute name="Fax" label="Fax Number Field Label" description="Enter Fax Field Label." />
+    <design:attribute name="FaxNumber" label="Fax Number Field Value" description="Enter Company's Fax Number." />
+    <design:attribute name="borderColor" label="Left Border Color" description="Example: #FF0000 or Red" />
+</design:component>

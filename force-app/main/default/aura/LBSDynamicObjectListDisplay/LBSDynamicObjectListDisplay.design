@@ -1,0 +1,8 @@
+<design:component>
+	<design:attribute name ="object" label="Object Name" required="true" description="Enter Object API Name."/>
+    <design:attribute name ="prev" label="Records to Display " description="Number of Records to Display" required="true"/>
+    <design:attribute name ="fieldsToDisplay" label="Column Names to Display" description="Enter Field API Names seperated by comma (,)." required="true"/>
+    <design:attribute name ="sortByFieldName" label="Record Sorting by Column" description="Enter Field API Name to sort the records display." />
+    <design:attribute name ="ascDesc" label="Record Sorting By" description ="Sort all records by ASC or DESC order." datasource="ASC,DESC"/>
+    
+</design:component>

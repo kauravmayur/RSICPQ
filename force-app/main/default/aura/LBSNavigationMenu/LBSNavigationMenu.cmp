@@ -1,0 +1,24 @@
+<aura:component extends="forceCommunity:navigationMenuBase" implements="forceCommunity:availableForAllPageTypes" access="global">
+    <aura:attribute name="navBarSearch" 		type="Aura.Component[]" required="false"/>
+    <aura:attribute name="profileMenu" 			type="Aura.Component[]" required="false"/>
+    <aura:attribute name="navBar" 				type="Aura.Component[]" required="false"/>
+    
+    <!--Stuff users can customize-->
+    <aura:attribute name="headerBGColor"		type="String" 	default="#333333" 	access="global"/>
+    <aura:attribute name="headerTextStyling"	type="String" 	default="font-size: x-large; font-weight: bold; color: #ffffff" 	access="global"/>
+    <aura:attribute name="bgGradientStart"		type="String" 	default="#55b4d4" 	access="global"/>
+    <aura:attribute name="bgGradientEnd"		type="String" 	default="#073b4c" 	access="global"/>
+    
+    <div style="{!'position: relative;'}">
+        <div class="slds-grid slds-wrap">
+             <div class="slds-col slds-size_12-of-12" style="{!'background: linear-gradient(45deg,' + v.bgGradientStart + ',' + v.bgGradientEnd + 
+                                                            ');height: 100vh;width: 100%;top:0;overflow-y: auto;'}">
+                <div class="navigation">
+                    {!v.navBar}
+                </div> 
+                {!v.body}
+            </div>
+        </div> 
+    </div>
+    
+</aura:component>

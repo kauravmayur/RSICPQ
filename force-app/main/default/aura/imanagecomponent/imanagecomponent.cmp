@@ -1,0 +1,26 @@
+<aura:component controller="FileUploadController" implements="force:appHostable,flexipage:availableForRecordHome,force:hasRecordId,force:hasSObjectName" access="global" >
+    <aura:attribute name="sObjectName" type="String"/>
+    <aura:attribute name="MatterName" type="String" />
+    <aura:attribute name="parentId" type="Id" default="{!v.recordId}" />
+    <aura:attribute name="showLoadingSpinner" type="boolean" default="false" />
+    <aura:attribute name="fileName" type="String" default="No File Selected.." />
+    
+    <aura:handler name="imanageRefreshEvent" event="c:imanageComponentRefreshEvent" action="{!c.refreshChildComp}"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <div class="slds-grid slds-wrap">
+        <div class="slds-col slds-size_8-of-12" style="padding-top: 4px;">
+            <c:FolderLinks MatterName="{!v.MatterName}" sObjectName="{!v.sObjectName}"/>
+        </div>
+        <div class="slds-col slds-size_4-of-12" style="padding-left: 15px;">
+            <c:menuOptions/>
+        </div>
+    </div>
+    <br/><br/>
+    <aura:if isTrue="{!equals(v.sObjectName,'Case')}">
+        <c:matterAttachments></c:matterAttachments>
+        <aura:set attribute="else">
+            <c:accountAttachments></c:accountAttachments>
+        </aura:set>
+    </aura:if> 
+    
+</aura:component>

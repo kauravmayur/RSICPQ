@@ -1,0 +1,35 @@
+.THIS {
+    width: 320px;
+    padding-top: 25px;
+}
+.THIS h2 {
+    font-size: 20px;
+    
+}
+.THIS.uiMenu {
+    margin: 20px;
+}
+
+
+.THIS .slds-nav-vertical__title {
+      display : none;
+      visibility : hidden;
+	      
+}
+.THIS .verticalNavigation {
+    font-size: large;
+    font-weight: bold;
+}
+/*
+.THIS .slds-button_brand{
+    border-radius: 25px;
+    border-color: rgb(212, 212, 212)!important;
+    background-color: rgb(212, 212, 212)!important;
+    color: rgb(0, 0, 0)!important;
+    height: 30px;
+    width: 30px;
+}
+*/
+.THIS .slds-col li{
+  padding-right: 20px;
+}

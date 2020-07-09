@@ -1,0 +1,6 @@
+.THIS.menuItemBorder {
+    border-top: black;
+}
+.THIS .slds-dropdown-trigger {
+    visibility: hidden;
+}

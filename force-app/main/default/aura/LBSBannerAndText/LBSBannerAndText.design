@@ -1,0 +1,17 @@
+<design:component>
+    <design:attribute name="backgroundImageURL" label="Background Image" description="Provide the resource file name for custom background image." />
+    <design:attribute name="standardBackgroundColor" label="Background Color" description="Example: #FF0000 or Red" />
+    
+    <design:attribute name="bannerText" label="Banner Header Text" description="Enter Banner Name" />
+    <design:attribute name="bannerTextColor" label="Banner Header Text Color" description="Example: #FF0000 or Red" />
+    <design:attribute name="bannerFontFamily" label="Banner Header Font Family" description="Example: Verdana" />
+    <design:attribute name="bannerFontSize" label="Banner Header Font Size (px)" description="Example: 10 or 12" />
+	
+    <design:attribute name="bannerDescriptionText" label="Banner Description Text 1" description="Enter Banner Description Details." />
+    <design:attribute name="bannerDescriptionText1" label="Banner Description Text 2" description="Enter Banner Description Details." />
+    <design:attribute name="bannerDescriptionText2" label="Banner Description Text 3" description="Enter Banner Description Details." />
+    <design:attribute name="bannerDescriptionTextColor" label="Banner Description Text Color" description="Example: #FF0000 or Red" />
+    <design:attribute name="bannerDescriptionFontFamily" label="Banner Description Font Family" description="Example: Verdana" />
+    <design:attribute name="bannerDescriptionFontSize" label="Banner Description Font Size (px)" description="Example: 10 or 12" />
+
+</design:component>

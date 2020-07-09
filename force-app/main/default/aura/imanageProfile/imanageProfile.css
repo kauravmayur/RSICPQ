@@ -1,0 +1,47 @@
+.THIS .slds-table th{
+    padding: 16px !important;
+}
+
+.THIS .slds-table td{
+    padding: 16px !important;
+}
+
+.THIS .slds-grid_vertical{
+    width: max-content;
+}
+
+.THIS .cardStyle{
+    width: 100%;
+    height: 230px;
+    background-color: #e5e5e5;    
+}
+
+.THIS .cardParent{
+    width: 200px;
+}
+
+.THIS .slds-col li{
+  padding-right: 20px;
+}
+
+.THIS .slds-button_brand{
+    border-radius: 25px;
+    border-color: rgb(212, 212, 212)!important;
+    background-color: rgb(212, 212, 212)!important;
+    color: rgb(0, 0, 0)!important;
+    height: 30px;
+    width: 30px;
+}
+.THIS .tabset{
+    background-color: rgb(250,250,249);
+    font-size: larger;
+    
+    
+}
+.THIS .tabs{
+    font-size: initial;
+}
+
+.THIS .slds-tabs_default__nav{
+    border-bottom-color: transparent;
+}

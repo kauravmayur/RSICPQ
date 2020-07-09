@@ -1,0 +1,4 @@
+<aura:event type="COMPONENT" description="imanage Component Refresh Event">
+    
+    <aura:attribute name="ObjectName" type="String"/>
+</aura:event>

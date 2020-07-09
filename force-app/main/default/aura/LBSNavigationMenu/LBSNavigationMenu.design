@@ -1,0 +1,4 @@
+<design:component>
+	<design:attribute name="bgGradientStart"	label="Background Color Gradient Start in Hexadecimal code (Default = #55b4d4)"/>
+    <design:attribute name="bgGradientEnd"		label="Background Color Gradient End in Hexadecimal code (Default = #073b4c)"/>
+</design:component>

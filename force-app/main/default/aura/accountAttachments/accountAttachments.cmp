@@ -1,0 +1,197 @@
+<aura:component >
+    <aura:attribute name="sObjectName" type="String"/>
+    <aura:registerEvent name="imanageRefreshEvent" type="c:imanageComponentRefreshEvent" />
+    <aura:if isTrue="{!equals(v.sObjectName,'case')}">
+        <c:matterAttachments></c:matterAttachments>
+        <aura:set attribute="else">
+            <div class="slds-grid slds-grid_vertical">
+                <div class="slds-col">
+                    <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                        <thead>
+                            <tr class="slds-line-height_reset">
+                                <th class="" scope="col">
+                                    <div class="slds-truncate" title="Name">Name</div>
+                                </th>
+                                <th class="" scope="col">
+                                    <div class="slds-truncate" title="Updated">Updated</div>
+                                </th>
+                                <th class="" scope="col">
+                                    <div class="slds-truncate" title="Size">Size</div>
+                                </th>
+                                <th class="" scope="col" style="width: 100px;">
+                                    <div class="slds-truncate" title="More Action">More Action</div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="slds-hint-parent">
+                        <th data-label="Opportunity Name" scope="row">
+                            <div class="slds-truncate">
+                                <a href="javascript:void(0);" title="Campaign Documentation" tabindex="-1">
+                                    <lightning:icon iconName="doctype:pdf" alternativeText="Campaign Documentation" title="Campaign Documentation" />
+                                    &nbsp;&nbsp;
+                                    Campaign Documentation
+                                </a>
+                            </div>
+                        </th>
+                        <td data-label="Updated">
+                            <div class="slds-truncate" title="Yesterday by Peter">Today by Peter</div>
+                        </td>
+                        <td data-label="Size">
+                            <div class="slds-truncate" title="10.82 KB">10.82 KB</div>
+                        </td>
+                        <td data-label="Amount">
+                            <c:menuItemAction/>
+                        </td>
+                    </tr>
+                            <tr class="slds-hint-parent">
+                                <th data-label="Opportunity Name" scope="row">
+                                    <div class="slds-truncate" >
+                                        <lightning:icon iconName="standard:folder" alternativeText="Matter - 00001025" title="Matter - 00001025" />
+                                        <a href="javascript:void(0);" tabindex="-1" title="Matter - 00001025" onclick="{!c.openMatter}" >
+                                            &nbsp;&nbsp;
+                                            Matter - 00001025
+                                        </a>
+                                    </div>
+                                </th>
+                                <td data-label="Updated">
+                                    <div class="slds-truncate" title="Yesterday by Andy">Yesterday by Andy</div>
+                                </td>
+                                <td data-label="Size">
+                                    <div class="slds-truncate" title="5 Files">5 Files</div>
+                                </td>
+                                <td data-label="Action">
+                                    <c:menuItemAction/>
+                                </td>
+                            </tr>
+                            <tr class="slds-hint-parent">
+                                <th data-label="Opportunity Name" scope="row">
+                                    <div class="slds-truncate">
+                                        <lightning:icon iconName="standard:folder" alternativeText="Matter - 00001024" title="Matter - 00001024" />
+                                        <a href="javascript:void(0);" tabindex="-1" title="Matter - 00001024" >
+                                            &nbsp;&nbsp;
+                                            Matter - 00001024
+                                        </a>
+                                    </div>
+                                </th>
+                                <td data-label="Updated">
+                                    <div class="slds-truncate" title="Yesterday by Andy">May 19,2020 by Andy</div>
+                                </td>
+                                <td data-label="Size">
+                                    <div class="slds-truncate" title="0 Files">0 Files</div>
+                                </td>
+                                <td data-label="Action">
+                                    <c:menuItemAction/>
+                                </td>
+                            </tr>
+                            <tr class="slds-hint-parent">
+                                <th data-label="Opportunity Name" scope="row">
+                                    <div class="slds-truncate" >
+                                        <lightning:icon iconName="standard:folder" alternativeText="Matter - 00001023" title="Matter - 00001023" />
+                                        <a href="javascript:void(0);" tabindex="-1" title="Matter - 00001023" >
+                                            &nbsp;&nbsp;
+                                            Matter - 00001023
+                                        </a>
+                                    </div>
+                                </th>
+                                <td data-label="Updated">
+                                    <div class="slds-truncate" title="Yesterday by Andy">May 19,2020 by Andy</div>
+                                </td>
+                                <td data-label="Size">
+                                    <div class="slds-truncate" title="0 Files">0 Files</div>
+                                </td>
+                                <td data-label="Action">
+                                    <c:menuItemAction/>
+                                </td>
+                            </tr>
+                            <tr class="slds-hint-parent">
+                                <th data-label="Opportunity Name" scope="row">
+                                    <div class="slds-truncate" >
+                                        <lightning:icon iconName="standard:folder" alternativeText="Matter - 00001022" title="Matter - 00001022" />
+                                        <a href="javascript:void(0);" tabindex="-1" title="Matter - 00001022" >
+                                            &nbsp;&nbsp;
+                                            Matter - 00001022
+                                        </a>
+                                    </div>
+                                </th>
+                                <td data-label="Updated">
+                                    <div class="slds-truncate" title="Yesterday by Andy">May 19,2020 by Andy</div>
+                                </td>
+                                <td data-label="Size">
+                                    <div class="slds-truncate" title="0 Files">0 Files</div>
+                                </td>
+                                <td data-label="Action">
+                                    <c:menuItemAction/>
+                                </td>
+                            </tr>
+                            <tr class="slds-hint-parent">
+                                <th data-label="Opportunity Name" scope="row">
+                                    <div class="slds-truncate" >
+                                        <lightning:icon iconName="standard:folder" alternativeText="Matter - 00001021" title="Matter - 00001021" />
+                                        <a href="javascript:void(0);" tabindex="-1" title="Matter - 00001021" >
+                                            &nbsp;&nbsp;
+                                            Matter - 00001021
+                                        </a>
+                                    </div>
+                                </th>
+                                <td data-label="Updated">
+                                    <div class="slds-truncate" title="Yesterday by Andy">May 19,2020 by Andy</div>
+                                </td>
+                                <td data-label="Size">
+                                    <div class="slds-truncate" title="0 Files">0 Files</div>
+                                </td>
+                                <td data-label="Action">
+                                    <c:menuItemAction/>
+                                </td>
+                            </tr>
+                            <tr class="slds-hint-parent">
+                                <th data-label="Opportunity Name" scope="row">
+                                    <div class="slds-truncate" >
+                                        <lightning:icon iconName="standard:folder" alternativeText="Matter - 00001002" title="Matter - 00001002" />
+                                        <a href="javascript:void(0);" tabindex="-1" title="Matter - 00001002" >
+                                            &nbsp;&nbsp;
+                                            Matter - 00001002
+                                        </a>
+                                    </div>
+                                </th>
+                                <td data-label="Updated">
+                                    <div class="slds-truncate" title="Yesterday by Andy">May 19,2020 by Andy</div>
+                                </td>
+                                <td data-label="Size">
+                                    <div class="slds-truncate" title="0 Files">0 Files</div>
+                                </td>
+                                <td data-label="Action">
+                                    <c:menuItemAction/>
+                                </td>
+                            </tr>
+                            <tr class="slds-hint-parent">
+                                <th data-label="Opportunity Name" scope="row">
+                                    <div class="slds-truncate">
+                                        <lightning:icon iconName="standard:folder" alternativeText="Matter - 00001001" title="Matter - 00001001" />
+                                        <a href="javascript:void(0);" tabindex="-1" title="Matter - 00001001" >
+                                            &nbsp;&nbsp;
+                                            Matter - 00001001
+                                        </a>
+                                    </div>
+                                </th>
+                                <td data-label="Updated">
+                                    <div class="slds-truncate" title="Yesterday by Andy">May 19,2020 by Andy</div>
+                                </td>
+                                <td data-label="Size">
+                                    <div class="slds-truncate" title="0 Files">0 Files</div>
+                                </td>
+                                <td data-label="Action">
+                                    <c:menuItemAction/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="slds-col">
+                    <br/><br/><br/><br/><br/><br/>
+                </div>
+            </div>
+        </aura:set>
+    </aura:if> 
+    
+</aura:component>

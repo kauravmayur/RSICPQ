@@ -1,0 +1,36 @@
+<design:component>
+    
+    <design:attribute name="quickActionTextColor" label="Header Text Color" description="Example: #FF0000 or Red" />
+    <design:attribute name="quickActionFontSize" label="Header Font Size (px)" description="Example: 10 or 12" />
+    <design:attribute name="quickActionFontFamily" label="Header Font Family" description="Example: Verdana" />
+    
+    <design:attribute name="quoteTextColor" label="Buttons Text Color" description="Example: #FF0000 or Red" />
+    <design:attribute name="quoteButtonFontFamily" label="Buttons Font Family" description="Example: Verdana" />
+    <design:attribute name="quoteButtonFontSize" label="Buttons Font Size (px)" description="Example: 10 or 12" />
+    
+    <design:attribute name="quoteObjectName" label="Button # 1 Object API Name" description="Provide the object API name" />
+    <design:attribute name="quoteButtonName" label="Button # 1 Label" description="Enter button label name." />
+    <design:attribute name="quoteButtonIconChange" label="Button # 1 SLDS Icon" description="Format is Category:icon (refer SLDS)" />
+    <design:attribute name="quoteCustomButtonIconChange" label="Button # 1 Custom Icon" description="Provide the resource file name for custom icon." />
+    
+    <design:attribute name="opportunityObjectName" label="Button # 2 Object API Name" description="Provide the object API name" />
+    <design:attribute name="opportunityButtonName" label="Button # 2 Label" description="Enter button label name." />
+    <design:attribute name="opportunityButtonIconChange" label="Button # 2 SLDS Icon" description="Format is Category:icon (refer SLDS)" />
+    <design:attribute name="opportunityCustomButtonIconChange" label="Button # 2 Custom Icon" description="Provide the resource file name for custom icon." />
+    
+    <design:attribute name="leadObjectName" label="Button # 3 Object API Name" description="Provide the object API name" />
+    <design:attribute name="leadButtonName" label="Button # 3 Label" description="Enter button label name." />
+    <design:attribute name="leadButtonIconChange" label="Button # 3 SLDS Icon" description="Format is Category:icon (refer SLDS)" />
+    <design:attribute name="leadCustomButtonIconChange" label="Button # 3 Custom Icon" description="Provide the resource file name for custom icon." />
+    
+    <design:attribute name="accountObjectName" label="Button # 4 Object API Name" description="Provide the object API name" />
+    <design:attribute name="accountButtonName" label="Button # 4 Label" description="Enter button label name." />
+    <design:attribute name="accountButtonIconChange" label="Button # 4 SLDS Icon" description="Format is Category:icon (refer SLDS)" />
+    <design:attribute name="accountCustomButtonIconChange" label="Button # 4 Custom Icon" description="Provide the resource file name for custom icon." />
+    
+    
+    <design:attribute name="borderColor" label="Left Border Color" description="Example: #FF0000 or Red" />
+    <design:attribute name="backgroundColor" label="Background Color" description="Example: #FF0000 or Red" />
+    <design:attribute name="customIconRadius" label="Custom Icon Radius" description="Change the icon corner" />
+    
+</design:component>

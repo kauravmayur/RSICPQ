@@ -1,0 +1,33 @@
+<aura:component >
+    
+    <div class="slds-grid slds-wrap">
+        
+        <div class="slds-col slds-size_1-of-1 slds-large-size_2-of-12" >
+            <!--
+            <button class="slds-button" data-type="create-file" data-doc-type="boxnote" data-resin-target="newboxnotebutton" data-tooltip="" data-tooltip-position="top" data-utm-source="create" aria-label="Write a quick note">  
+                <lightning:icon iconName="action:new_note" size="x-small" alternativeText="Write a quick note" title="Write a quick note" />
+            </button>
+			-->
+        </div>
+        <div class="slds-col slds-size_1-of-1 slds-large-size_4-of-12" style="margin-right: 5px;">
+            <lightning:buttonMenu aura:id="menu" alternativeText="Show menu" label="New" iconSize="x-small">
+                <lightning:menuItem aura:id="menuItems" label="Bookmark" value="Bookmark" iconName="doctype:link"/>
+                <lightning:menuItem aura:id="menuItems" label="Note" value="Note" iconName="doctype:box_notes"/>
+                <lightning:menuItem aura:id="menuItems" label="Note from Template" value="Note from Template" iconName="doctype:box_notes"/>
+                <lightning:menuDivider variant="compact" />
+                <lightning:menuItem aura:id="menuItems" label="Word Document" value="word" iconName="doctype:word"/>
+                <lightning:menuItem aura:id="menuItems" label="PowerPoint Presentation" value="ppt" iconName="doctype:ppt"/>
+                <lightning:menuItem aura:id="menuItems" label="Excel Spreadsheet" value="gsheet" iconName="doctype:gsheet"/>
+            </lightning:buttonMenu>
+        </div>
+        <div class="slds-col slds-size_1-of-1 slds-large-size_4-of-12">
+            <lightning:buttonMenu aura:id="menu" alternativeText="Show menu" label="Upload" iconSize="x-small">
+                <lightning:menuItem aura:id="menuItems" label="Files" value="download" iconName="standard:file"/>
+                <lightning:menuItem aura:id="menuItems" label="Folder" value="favorite" iconName="doctype:folder"/>
+            </lightning:buttonMenu>
+        </div>
+        <div class="slds-col slds-size_1-of-1 slds-large-size_2-of-12">
+            <span></span>
+        </div>
+    </div>
+</aura:component>

@@ -1,0 +1,5 @@
+.THIS .buttonColor{
+    background-color: white;
+    /*background-color: var(--viewAllButtonColor);*/
+    /*background-color: {!v.viewAllButtonColor}; */
+}

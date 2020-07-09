@@ -1,0 +1,48 @@
+.THIS .buttonStylexx {
+    color: #4169E1;
+    font-weight: bold; 
+    margin-left : 100px;
+}
+
+.THIS .buttonStyle {
+    color: #4169E1;
+    font-weight: bold; 
+    margin-left : 100px;
+}
+.THIS .buttonStyle1 {
+    color: #20B2AA;
+    font-weight: bold;   
+    margin-left : 60px;
+}
+.THIS .buttonStyle2 {
+    color: #FA8072;
+    font-weight: bold; 
+    margin-left : 112px;
+}
+.THIS .buttonStyle3 {
+    color: #4169E1;
+    font-weight: bold;
+    margin-left : 89px;    
+}
+
+.THIS .clickableButton {
+    cursor: pointer;
+    margin-left : 5px;
+}
+
+.THIS .slds-float_left{
+    margin-left: 60px;
+    margin-bottom:10px;
+    font-size: 15px;
+    font-weight:bold;
+    padding-top: 7px;
+}
+.THIS .quickActionButton{
+    padding-top: 7px;
+    float: right;
+    
+}
+
+.THIS a:hover {
+    text-decoration: underline;
+}

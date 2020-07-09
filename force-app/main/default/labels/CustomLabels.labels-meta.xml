@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>RSI_AWS_Callout</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>RSI_AWS_Callout</shortDescription>
+        <value>QuoteToAWS</value>
+    </labels>
+    <labels>
+        <fullName>RSI_AWS_Folder</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>RSI_AWS_Folder</shortDescription>
+        <value>2020/May</value>
+    </labels>
+    <labels>
+        <fullName>RSI_CPQ_CommunityName</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>RSI_CPQ_CommunityName</shortDescription>
+        <value>Channel Partner Community</value>
+    </labels>
+</CustomLabels>

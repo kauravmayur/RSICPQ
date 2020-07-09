@@ -1,0 +1,35 @@
+<aura:component  controller="imanageController" implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global" >
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="contacts" type="List"/>
+    <aura:attribute name="users" type="User"/>
+    <aura:attribute name="screenWidth" type="decimal"/>
+    
+    <div style="{! 'width:'+v.screenWidth*80/100+'px;padding-left: 50px;'}">
+        <div class="slds-grid slds-grid_vertical">
+            <div class="slds-col">
+                <div class="slds-text-heading_medium"><b>{!$Label.c.Imanage_Profile}</b></div>
+            </div>
+            <div class="slds-col">
+                <br/><br/><br/>
+            </div>
+        </div>
+        <div class="slds-grid slds-grid_vertical">
+            <div class="slds-col">
+                <!--<div class="slds-text-heading_large"><b>New Documents</b></div>-->
+            </div>
+            <div class="slds-col" style="{! 'width:'+v.screenWidth*80/100+'px;padding-top: 25px; padding-bottom: 20px'}" >
+                <lightning:tabset selectedTabId="two" class="tabset">
+                    <lightning:tab label="{!$Label.c.Imanage_Personal_Informations}" id="one" class="tabs">
+                        <c:imanagePersonalInformation users="{!v.users}"/>
+                    </lightning:tab>
+                    <lightning:tab label="{!$Label.c.Imanage_Forms}" id="two">
+                        <c:imanageUsefulForms/>
+                    </lightning:tab>
+                    <lightning:tab label="{!$Label.c.Imanage_Organizational_chart}" id="three">
+                        
+                    </lightning:tab>
+                </lightning:tabset>
+            </div>
+        </div>
+    </div>
+</aura:component>

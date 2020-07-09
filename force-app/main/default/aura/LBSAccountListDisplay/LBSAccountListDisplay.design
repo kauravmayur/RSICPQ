@@ -1,0 +1,8 @@
+<design:component>
+    <design:attribute name="toalNumberOfAccount" label="Total Number of Accounts to Display" description="Total Number of Accounts to Display" />
+    <design:attribute name="fieldsToDisplay" label="Enter Fields to Display" description="Field name should be seperated by comma (,)." />
+    
+    <design:attribute name="sortByAccountField" label="Enter Fields Name to Sort" description="Enter Fields Name to Sort the Account List Display" />
+    <design:attribute name="sortAscDescAccount" label="Ascending / Descending sort" datasource="asc,desc" />
+    
+</design:component>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RSI_rule_for_eSignature_and_Signature</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND (
+  NOT(ISBLANK(TEXT( Signature_Status__c ))),
+   Electronic_Signature__c = FALSE
+)</errorConditionFormula>
+    <errorDisplayField>Electronic_Signature__c</errorDisplayField>
+    <errorMessage>You must check Electronic Signature.</errorMessage>
+</ValidationRule>

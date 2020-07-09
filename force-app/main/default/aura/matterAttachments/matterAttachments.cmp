@@ -1,0 +1,160 @@
+<aura:component >
+    <div class="slds-grid slds-grid_vertical">
+        <div class="slds-col">
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                <thead>
+                    <tr class="slds-line-height_reset">
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Name">Name</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Updated">Updated</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Size">Size</div>
+                        </th>
+                        <th class="" scope="col" style="width: 100px;">
+                            <div class="slds-truncate" title="More Action">More Action</div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="slds-hint-parent">
+                        <th data-label="Opportunity Name" scope="row">
+                            <div class="slds-truncate" >
+                                <a href="javascript:void(0);" title="Andy" tabindex="-1"><img src="https://rsicpq-dev-ed--c.documentforce.com/servlet/servlet.FileDownload?file=00P5w00001L89wWEAR" height = "35" width = "35"/>
+                                    &nbsp;&nbsp;Andy</a>
+                            </div>
+                        </th>
+                        <td data-label="Updated">
+                            <div class="slds-truncate" title="Yesterday by Andy">Yesterday by Andy</div>
+                        </td>
+                        <td data-label="Size">
+                            <div class="slds-truncate" title="5.3 KB">5.3 KB</div>
+                        </td>
+                        <td data-label="Action">
+                            <c:menuItemAction/>
+                        </td>
+                    </tr>
+                    <tr class="slds-hint-parent">
+                        <th data-label="Opportunity Name" scope="row">
+                            <div class="slds-truncate">
+                                <a href="javascript:void(0);" title="Paul" tabindex="-1"><img src="https://rsicpq-dev-ed--c.documentforce.com/servlet/servlet.FileDownload?file=00P5w00001L89wbEAB" height = "35" width = "35"/>
+                                    &nbsp;&nbsp;Paul</a>
+                            </div>
+                        </th>
+                        <td data-label="Updated">
+                            <div class="slds-truncate" title="Yesterday by Paul">Yesterday by Paul</div>
+                        </td>
+                        <td data-label="Size">
+                            <div class="slds-truncate" title="35.2 KB">35.2 KB</div>
+                        </td>
+                        <td data-label="Amount">
+                            <c:menuItemAction/>
+                        </td>
+                    </tr>
+                    <tr class="slds-hint-parent">
+                        <th data-label="Opportunity Name" scope="row">
+                            <div class="slds-truncate" >
+                                <a href="javascript:void(0);" title="Peter" tabindex="-1"><img src="https://rsicpq-dev-ed--c.documentforce.com/servlet/servlet.FileDownload?file=00P5w00001L89wcEAB" height = "35" width = "35"/>
+                                    &nbsp;&nbsp;Peter</a>
+                            </div>
+                        </th>
+                        <td data-label="Updated">
+                            <div class="slds-truncate" title="Yesterday by Peter">Yesterday by Peter</div>
+                        </td>
+                        <td data-label="Size">
+                            <div class="slds-truncate" title="28.2 KB">28.2 KB</div>
+                        </td>
+                        <td data-label="Amount">
+                            <c:menuItemAction/>
+                        </td>
+                    </tr>
+                    <tr class="slds-hint-parent">
+                        <th data-label="Opportunity Name" scope="row">
+                            <div class="slds-truncate" >
+                                <a href="javascript:void(0);" title="Project Details" tabindex="-1">
+                                    <lightning:icon iconName="doctype:csv" alternativeText="down" title="down" />
+                                    &nbsp;&nbsp;
+                                    Project Details
+                                </a>
+                            </div>
+                        </th>
+                        <td data-label="Updated">
+                            <div class="slds-truncate" title="Yesterday by Paul">Yesterday by Paul</div>
+                        </td>
+                        <td data-label="Size">
+                            <div class="slds-truncate" title="11 B">11 B</div>
+                        </td>
+                        <td data-label="Amount">
+                            <c:menuItemAction/>
+                        </td>
+                    </tr>
+                    <tr class="slds-hint-parent">
+                        <th data-label="Opportunity Name" scope="row">
+                            <div class="slds-truncate">
+                                <a href="javascript:void(0);" title="Project Management" tabindex="-1">
+                                    <lightning:icon iconName="doctype:pdf" alternativeText="down" title="down" />
+                                    &nbsp;&nbsp;
+                                    Project Management
+                                </a>
+                            </div>
+                        </th>
+                        <td data-label="Updated">
+                            <div class="slds-truncate" title="Yesterday by Peter">Yesterday by Peter</div>
+                        </td>
+                        <td data-label="Size">
+                            <div class="slds-truncate" title="4.0 KB">9.46 KB</div>
+                        </td>
+                        <td data-label="Amount">
+                            <c:menuItemAction/>
+                        </td>
+                    </tr>
+                    <tr class="slds-hint-parent">
+                        <th data-label="Opportunity Name" scope="row">
+                            <div class="slds-truncate">
+                                <lightning:icon iconName="standard:folder" alternativeText="Supporting files" title="Supporting files" />
+                                <a href="javascript:void(0);" tabindex="-1" title="Supporting files" >
+                                    &nbsp;&nbsp;
+                                    Supporting files
+                                </a>
+                            </div>
+                        </th>
+                        <td data-label="Updated">
+                            <div class="slds-truncate" title="Yesterday by Andy">Yesterday by Andy</div>
+                        </td>
+                        <td data-label="Size">
+                            <div class="slds-truncate" title="0 Files">0 Files</div>
+                        </td>
+                        <td data-label="Action">
+                            <c:menuItemAction/>
+                        </td>
+                    </tr>
+                    <tr class="slds-hint-parent">
+                        <th data-label="Opportunity Name" scope="row">
+                            <div class="slds-truncate">
+                                <lightning:icon iconName="standard:folder" alternativeText="Supporting files" title="Matter Images" />
+                                <a href="javascript:void(0);" tabindex="-1" title="Matter Images" >
+                                    &nbsp;&nbsp;
+                                    Matter Images
+                                </a>
+                            </div>
+                        </th>
+                        <td data-label="Updated">
+                            <div class="slds-truncate" title="Yesterday by Andy">Yesterday by Andy</div>
+                        </td>
+                        <td data-label="Size">
+                            <div class="slds-truncate" title="0 Files">0 Files</div>
+                        </td>
+                        <td data-label="Action">
+                            <c:menuItemAction/>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="slds-col">
+            <br/><br/><br/><br/><br/><br/>
+        </div>
+    </div>
+</aura:component>

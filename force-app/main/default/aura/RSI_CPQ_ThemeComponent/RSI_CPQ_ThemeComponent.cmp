@@ -1,0 +1,52 @@
+<aura:component implements="forceCommunity:themeLayout,forceCommunity:profileMenuInterface" access="global">
+    <aura:attribute name="navBarSearch" 		type="Aura.Component[]" required="false" />
+    <aura:attribute name="profileMenu" 			type="Aura.Component[]" required="false"/>
+    <aura:attribute name="navBar" 				type="Aura.Component[]" required="false"/>
+    <aura:attribute name="mylabel"              type="String"           required="false"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+   
+     
+    
+    <!--Stuff users can customize-->
+    <aura:attribute name="headerBGColor"		type="String" 	default="#333333" 	access="global"/>
+    <aura:attribute name="headerTextStyling"	type="String" 	default="font-size: x-large; font-weight: bold; color: #ffffff" 	access="global"/>
+    <aura:attribute name="bgGradientStart"		type="String" 	default="#55b4d4" 	access="global"/>
+    <aura:attribute name="bgGradientEnd"		type="String" 	default="#073b4c" 	access="global"/>
+    
+    <div style="{!'position: relative;'}">
+        <div class="slds-grid slds-wrap">
+            <div class="slds-col slds-size_12-of-12" style="{!'background-color: ' + v.headerBGColor + ';box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);width: 100%;'}">
+                <div class="slds-grid slds-wrap">
+                    
+                    <div class="slds-col slds-size_1-of-12">
+                        <a style="" href=""  class="inactiveLink">
+                        <img src="{!'/sfsites/c/resource/'+v.mylabel}"/>
+                        </a>
+                    </div>
+                    
+                    <div class="slds-col slds-size_4-of-12" style="{!v.headerTextStyling + ';place-self: center;'}">
+                        {!$Label.c.RSI_CPQ_CommunityName}
+                    </div>
+                    <div class="slds-col slds-size_4-of-12" style="place-self: center;">
+                        {!v.navBarSearch}
+                    </div>
+                    <div class="profileMenuRegion slds-col slds-size_3-of-12" style="place-self: center; text-align: right;color:red">
+                        {!v.profileMenu}
+                    </div>
+                </div>
+            </div>
+            <div class="slds-col slds-size_12-of-12" style="{!'background: linear-gradient(45deg,' + v.bgGradientStart + ',' + v.bgGradientEnd + 
+                                                            ');height: 100vh;width: 100%;top:0;overflow-y: auto;'}">
+                <div class="navigation">
+                    {!v.navBar}
+                </div> 
+                {!v.body}
+            </div>
+
+        </div> 
+
+
+        
+    </div>
+    
+</aura:component>

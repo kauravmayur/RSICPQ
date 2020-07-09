@@ -1,0 +1,11 @@
+.THIS .leftPaddingClass {
+    width: -webkit-fill-available;
+}
+ 
+.THIS .pillSize{
+ width:100%;
+}
+
+.THIS .bottomPaddingClass{
+    padding-bottom:5px;
+}

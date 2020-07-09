@@ -1,0 +1,84 @@
+<aura:component controller="LBSDynamicObjectListDisplay" implements="lightning:actionOverride,force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <!--Attributes-->
+    <aura:attribute name="reloadForm" type="boolean" default="true" />
+    <aura:attribute name="ContactNumber" type="String"  default="ContactNumber" access="global"/> 
+    <aura:attribute name="ContactTeleNumber" type="String"  default="555-555-1234"  access="global"/> 
+    <aura:attribute name="Email" type="String"  default="E-Mail" access="global"/> 
+    <aura:attribute name="DisplayEmail" type="String"  default="support@yourdomain.com" access="global"/> 
+    <aura:attribute name="Fax" type="String"  default="Fax" access="global"/> 
+    <aura:attribute name="FaxNumber" type="String"  default="555-555-1234" access="global"/> 
+    <aura:attribute name="Contactid" type="String" access="global" />
+    <aura:attribute name="borderColor" type="String" default="#000000" access="global"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="otherFlag" type="boolean" default="false" />
+    <aura:attribute name="showValidationError" type="boolean" default="false" />
+    <aura:attribute name="vaildationFailReason" type="String"  default= " " access="global"/> 
+    
+    
+    <!-- Design Layout Part Start-->
+    <div style="padding-left: 15%;padding-right: 35%;">
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col slds-size_2-of-3">
+                <div class="slds-col">
+                    <span style="font-style:bold; font-size:19px; padding:10%;"><strong>CUSTOMER SUPPORT FORM</strong></span>
+                </div>
+                <!--Component Start-->
+                <div class="slds-m-around_xx-large">
+                    <lightning:recordEditForm objectApiName="Support__c"
+                                              aura:id="accForm"                                              
+                                              onload="{!c.handleOnLoad}"
+                                              onsubmit="{!c.handleOnSubmit}"
+                                              onsuccess="{!c.handleOnSuccess}"
+                                              onerror="{!c.handleOnError}">
+                        <lightning:messages aura:id="OppMessage" />
+                        <aura:if isTrue="{!v.reloadForm}">
+                            <lightning:inputField fieldName="Account_Name__c" aura:id="supportFields" required="true" disabled="true" value="{!v.user.Contact.AccountId}"  />
+                            <lightning:inputField fieldName="Contact__c" aura:id="supportFields" required="true" disabled="true" value="{!v.user.ContactId}"   />       
+                            <lightning:inputField fieldName="Type__c" aura:id="supportFields" required="true" onchange="{!c.getFieldValue}" />
+                            <lightning:inputField fieldName="Subject__c" aura:id="supportFields" required="true" />
+                            <lightning:inputField fieldName="Description__c" aura:id="supportFields" required="{!v.otherFlag}"  />
+                            <aura:set attribute="else">
+                                Saving...
+                            </aura:set>
+                        </aura:if>
+                        <lightning:button variant="brand-outline" type="submit" name="Submit" label="Submit" />
+                    </lightning:recordEditForm>
+                </div>                
+            </div>     
+            <div class="slds-col slds-size_2-of-3" style="text-align: center;border-left: dashed; border-left-color: #0047b2">
+                <div class="slds-col">
+                    <span style="font-style:bold; font-size:20px; padding:10%;"><strong>CONTACT US</strong></span><br/><br/><br/><br/>
+                </div>
+                <div class="slds-col">
+                    <span style="font-style:bold; font-size:18px;"><strong>{!v.ContactNumber}</strong></span><br/>
+                </div>
+                <div class="slds-col">
+                    <span style="font-style:bold; font-size:18px;">{!v.ContactTeleNumber}</span><br/>
+                </div>
+                <div class="slds-col">
+                    <span style="font-style:bold; font-size:18px;"></span>
+                </div>
+                <hr></hr>
+                <div class="slds-col">
+                    <span style="font-style:bold; font-size:18px;"><strong>E-Mail</strong></span><br/>
+                </div>
+                <div class="slds-col">
+                    <span  style="font-style:bold; font-size:18px;">{!v.DisplayEmail}</span><br/>
+                </div>
+                <div class="slds-col">
+                    <span style="font-style:bold; font-size:18px;"></span>
+                </div>
+                <aura:if isTrue="{!not(empty(v.FaxNumber))}" >
+                    <hr></hr>
+                    <div class="slds-col">
+                        <span style="font-style:bold; font-size:18px;"><strong>{!v.Fax}</strong></span><br/>
+                    </div>
+                    <div class="slds-col">
+                        <span style="font-style:bold; font-size:18px;">{!v.FaxNumber}</span><br/><br/>
+                    </div>
+                </aura:if>
+            </div>
+        </div>        
+    </div>
+    <!--Component End-->
+</aura:component>

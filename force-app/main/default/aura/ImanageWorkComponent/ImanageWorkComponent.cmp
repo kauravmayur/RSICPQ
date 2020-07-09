@@ -1,0 +1,55 @@
+<aura:component controller="FileUploadController" implements="force:appHostable,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <!--
+<b>This is iManage Component</b>
+      
+      
+    <div class="slds-grid slds-gutters">
+  <div class="slds-col">
+    <span> <lightning:icon iconName="doctype:folder" alternativeText="Folder" title="DocAdv" /></span>
+  </div>
+  <div class="slds-col">
+    <span> <lightning:icon iconName="doctype:folder" alternativeText="Folder" title="DocImmigration" /></span>
+  </div>
+  <div class="slds-col">
+    <span> <lightning:icon iconName="doctype:folder" alternativeText="Folder" title="Doc" /></span>
+  </div>
+  <div class="slds-col">
+    <span> <lightning:icon iconName="doctype:folder" alternativeText="Folder" title="Doc" /></span>
+  </div>
+</div>
+
+   
+    <div class="slds-grid slds-gutters">
+        <div class="slds-col slds-size_1-of-3" style="width: 40px;">
+            <span><lightning:icon iconName="doctype:folder" alternativeText="Folder" title="Doc" /></span>
+        </div>
+        <div class="slds-col slds-size_2-of-3" style="padding-top: 8px;">
+            <span>Click here to check Files</span>
+        </div>
+    </div>
+-->
+    
+    
+    <aura:attribute name="parentId" type="Id" default="{!v.recordId}" />
+    <aura:attribute name="showLoadingSpinner" type="boolean" default="false" />
+    <aura:attribute name="fileName" type="String" default="No File Selected.." />
+    <div class="slds-grid slds-gutters">
+        <div class="slds-col slds-size_1-of-3">
+            <div class="slds-text-heading_small">All Files</div>
+        </div>
+        <div class="slds-col slds-size_2-of-3" style="padding-top: 8px;">
+            <span></span>
+        </div>
+    </div>
+    
+    <lightning:input aura:id="fileId" onchange="{!c.handleFilesChange}" type="file" name="file" label="Upload Attachment" multiple="false"/>
+    <div class="slds-text-body_small slds-text-color_error">{!v.fileName} </div>
+    <aura:if isTrue="{!v.showLoadingSpinner}">
+        <div class="slds-text-body_small slds-text-color_error">Uploading... 
+            <img src="/auraFW/resources/aura/images/spinner.gif" class="spinner-img" alt="Loading"/>'
+        </div>
+    </aura:if>
+    <br/>
+    <button class="slds-button slds-button_brand" onclick="{!c.doSave}">Upload Attachment</button>
+    
+</aura:component>

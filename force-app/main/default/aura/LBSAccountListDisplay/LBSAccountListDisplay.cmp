@@ -1,0 +1,78 @@
+<aura:component controller="LBSAccountListDisplayApex" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <aura:attribute name="Accounts" type="Account[]"/>
+    <aura:attribute name="page" type="integer" description="using for store page Number"/>
+    <aura:attribute name="pages" type="integer" description="using for store All Pages page Number"/>
+    <aura:attribute name="total" type="integer" description="total records count store "/>
+    <aura:attribute name="toalNumberOfAccount" type="Integer" default="10" />
+    <aura:attribute name="viewAllButtonColor" type="String" default="Red" />
+    <aura:attribute name="sortByAccountField" type="String" default="Name" />
+    <aura:attribute name="sortAscDescAccount" type="String" default="asc" />
+    <aura:attribute name="fieldsToDisplay" type="String" default="Id, Name"/>
+    <aura:attribute name="dynamicHeaders" type="String" default="Id, Name"/>
+    
+    
+    
+    <div class="slds-m-around_small">
+        <div style="margin-bottom:10px;">
+            <span class="slds-icon_container slds-icon-standard-account" title="description of icon when needed">
+                <lightning:icon iconName="standard:account" size="medium" alternativeText="List account"/>
+            </span>
+            &nbsp;
+            <span style="font-weight:bold ; font-size:15px; margin-bottom:100px;margin-top:100px;">Top {!v.toalNumberOfAccount} Accounts</span>
+            <span class="slds-float_right"> <lightning:button class="buttonColor" label="View All" title="View All Accounts" onclick="{! c.directToAccountHome }" /></span>
+        </div>
+        
+        <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+            <thead>
+                 <tr class="slds-text-title_caps">
+                    <th scope="col">
+                        <div class="slds-truncate" title="Name">S.N.</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Name">Account Name</div>
+                    </th>
+                     <!--  <aura:iteration items="{!v.dynamicHeaders}" var="dynamicH"> -->
+                    <th scope="col">
+                        <div class="slds-truncate" title="Amount">Total Amount</div>
+                        <!-- <div class="slds-truncate" title="Name">{!dynamicH}</div> -->
+                    </th>
+                     
+                </tr>
+            </thead>
+            <tbody>
+                <aura:iteration items="{!v.Accounts}" var="account" indexVar="index"> 
+                    <tr>
+                        <th scope="row" data-label="Opportunity Name">
+                            <div class="slds-truncate" title="{!account.Name}">{!index+1}</div>
+                        </th>
+                        
+                        <th scope="row" data-label="Opportunity Name">
+                            <div class="slds-truncate" title="{!account.Name}">{!account.Name}</div>
+                        </th>
+                        <th scope="row" data-label="Opportunity Name">
+                            <div class="slds-truncate" title="{!account.AnnualRevenue}">{!account.AnnualRevenue}</div>
+                        </th>
+                    </tr>
+                </aura:iteration>	
+            </tbody>
+        </table>
+        <!-- <div class="slds-page-header" role="banner">
+            
+            <p class=" slds-truncate">{!v.total} Accounts • Page {!v.page}/{!v.pages}</p>
+           <div>
+                <ui:inputSelect aura:id="recordSize" label="Display Record Per Page: " change="{!c.onSelectChange}">
+                    <ui:inputSelectOption text="10" label="10" value="true"/>
+                    <ui:inputSelectOption text="15" label="15"/>
+                    <ui:inputSelectOption text="20" label="20"/>
+                </ui:inputSelect>
+            </div> 
+            <div class="slds-align_absolute-center">
+                <lightning:button disabled="{!v.page == 1}" variant="brand" label="Previous Page" onclick="{! c.navigate }" />            
+                <lightning:button disabled="{!v.page == v.pages}" aura:id="previousPage" variant="brand" label="Next Page" onclick="{! c.navigate }" />
+            </div>
+        </div> -->
+    </div>
+</aura:component>

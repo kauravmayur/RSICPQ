@@ -1,0 +1,4 @@
+<apex:page standardController="Support__c">
+  <h1>You can not create a new support case from here!</h1>
+  <p>Please go to the relevant support section to submit a support case.</p>
+  </apex:page>

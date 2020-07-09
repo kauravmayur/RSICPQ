@@ -1,0 +1,94 @@
+<aura:component controller="LBSDynamicObjectListDisplay" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    
+    <!-- all attributes -->
+    <aura:attribute name="object" type="String" access="global"/>
+    <aura:attribute name="colData" type="List"/>
+    <aura:attribute name="fieldPath" type="List"/>
+    <aura:attribute name="rowData" type="List"/>
+    <aura:attribute name="allRowData" type="List"/>
+    <aura:attribute name="objectLabel" type="String" default="Account" access="global"/>
+    <aura:attribute name="next" type="Integer" default='0' access="global"/>
+    <aura:attribute name="prev" type="Integer" default='10' access="global"/>
+    <aura:attribute name="sortByFieldName" type="String" default="Name" access="global"/>
+    <aura:attribute name="ascDesc" type="String" access="global"/>
+    <aura:attribute name="error" type="String"/>
+    <aura:attribute name="fieldsToDisplay" type="String" access="global"/>
+    <aura:attribute name="toalNumberOfRecordsToDisplay" type="Integer" default="10" access="global"/>
+    <aura:attribute name="AccountTopHeader" type="String" access="global"/>
+    
+    <aura:handler  event="force:showToast" action="{!c.refresh}"/>
+    <aura:handler action="{!c.loadData}" name="init" value="{!this}"/>
+    
+    <div class="slds-box">
+        <!-- Show Top x Number of Records for an Object -->
+        <span style="font-size:15px; margin-bottom:100px;margin-top:100px;color: #e10606;margin-left: 110px;font-family: inherit;">
+            
+            {!v.error}
+        </span>
+        <div style="margin-bottom:10px;">
+            <span class="slds-icon_container slds-icon-standard-account" title="description of icon when needed">
+                <lightning:icon iconName="standard:contact_list" size="medium" alternativeText="List sObject"/>
+            </span>
+            &nbsp;
+            
+            <span style="font-weight:bold ; font-size:15px; margin-bottom:100px;margin-top:100px;">
+                {!v.AccountTopHeader}
+                
+            </span>
+            <span class="slds-float_right"> 
+                <lightning:button variant="brand-outline" label="View All" title="View All" onclick="{! c.directToSobjectHome }" />
+            </span>
+        </div>
+        
+        
+        <!-- Data table -->
+        <div>
+            
+            <table class="slds-table slds-table_bordered slds-table_resizable-cols slds-table_fixed-layout" role="grid">
+                <!-- Data table header -->
+                <thead>
+                    <tr class="slds-line-height_reset">
+                        <th aria-label="Actions" aria-sort="none" class="slds-is-sortable slds-is-resizable slds-text-title_caps" scope="col" style="width:6%">
+                            <a class="slds-th__action slds-text-link_reset" href="javascript:void(0);" role="button" tabindex="-1">
+                                <!-- <span> Actions </span> -->
+                                <span> S.N. </span>
+                            </a>
+                        </th>
+                        <aura:iteration items="{!v.colData}" var="obj">
+                            <c:LBSDynamicObjectListHeader
+                                                          colData = "{!v.colData}"
+                                                          col_fieldPath = "{!obj.fieldPath}"
+                                                          rowData ="{!v.rowData}"
+                                                          colName = "{!obj.label}"
+                                                          isSortUp = "{!obj.isSortUp}"
+                                                          isSortDown = "{!obj.isSortDown}"
+                                                          byDefaultSort = "{!obj.byDefaultSort}"
+                                                          />
+                        </aura:iteration>
+                    </tr>
+                </thead>
+                <!-- table body  -->
+                <tbody>
+                    <!-- display row  -->
+                    <aura:iteration items="{!v.rowData}" var="obj" indexVar="index">
+                        
+                        <tr class="slds-hint-parent" >
+                            <th scope="row" data-label="Object Name">
+                                <div class="slds-truncate" >{!index+1}</div>
+                            </th>
+                            <aura:iteration items="{!v.fieldPath}" var="objpath">
+                                <td role="gridcell">
+                                    <div class="slds-truncate" title="Acme">
+                                        <c:LBSDynamicObjectListRows 
+                                                                    rows  = '{!obj}'
+                                                                    fieldName = '{!objpath}'/>
+                                    </div>
+                                </td>
+                            </aura:iteration>
+                        </tr>
+                    </aura:iteration> 
+                </tbody>
+            </table>
+        </div>
+    </div>
+</aura:component>

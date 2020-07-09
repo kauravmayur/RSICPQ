@@ -1,0 +1,35 @@
+<aura:component  controller="imanageController" implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global" >
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="contacts" type="List"/>
+    <aura:attribute name="screenWidth" type="decimal"/>
+    <table class="slds-table slds-table_cell-buffer slds-table_bordered" >
+        <thead>
+            <tr class="slds-line-height_reset">
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="Form Name">Form Name</div>
+                </th>
+                <th class="" scope="col" style="text-align: end;">
+                    <div class="slds-truncate" title="Date Added">Date Added</div>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            <aura:iteration items="{!v.contacts}" start="0" end="4" var="con">
+                <tr class="slds-hint-parent">
+                    <th data-label="Document name" scope="row">
+                        <div class="slds-truncate" title="{!con.Name}">
+                            <a href="javascript:void(0);" tabindex="-1">{!con.Name}</a>
+                        </div>
+                    </th>
+                    <td data-label="Prospecting" style="text-align: end;">
+                        <div class="slds-truncate" title="{!con.CreatedDate}">
+                            <ui:outputDate value="{!con.CreatedDate}"/>
+                        </div>
+                    </td>
+                </tr>
+                
+            </aura:iteration>
+        </tbody>
+    </table>
+</aura:component>

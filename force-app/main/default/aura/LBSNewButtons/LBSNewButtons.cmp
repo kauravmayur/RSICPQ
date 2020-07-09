@@ -1,0 +1,114 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="quickActionTextColor" type="String" default="#000000" access="global"/>
+    <aura:attribute name="quickActionFontSize" type="Integer" default="20" access="global"/>
+    <aura:attribute name="quickActionFontFamily" type="String" default="Verdana" access="global"/>
+    <aura:attribute name="backgroundColor" type="String" default="#000000" access="global"/>
+    <aura:attribute name="borderColor" type="String" default="#000000" access="global"/>
+    
+    <aura:attribute name="quoteTextColor" type="String" default="#735E00" access="global"/>
+    <aura:attribute name="quotefontweight" type="String" default="bold" access="global"/>
+    <aura:attribute name="quotemarginleft" type="Integer" default="100" access="global"/>
+    <aura:attribute name="quoteButtonFontFamily" type="String" default="Verdana" access="global"/>
+    <aura:attribute name="quoteButtonFontSize" type="Integer" default="15" access="global"/>
+    
+    <aura:attribute name="quoteButtonName" type="String" default="New Quote" access="global"/>
+    <aura:attribute name="quoteButtonIconChange" type="String" default="action:add_file" access="global"/>
+    <aura:attribute name="quoteObjectName" type="String" default="SBQQ__Quote__c" access="global"/>
+    
+    <aura:attribute name="opportunityButtonName" type="String" default="New Opportunity" access="global"/>
+    <aura:attribute name="opportunityButtonIconChange" type="String" default="custom:custom20" access="global"/>
+    <aura:attribute name="opportunityObjectName" type="String" default="Opportunity" access="global"/>
+    
+    <aura:attribute name="leadButtonName" type="String" default="New Lead" access="global"/>
+    <aura:attribute name="leadButtonIconChange" type="String" default="doctype:flash" access="global"/>
+    <aura:attribute name="leadObjectName" type="String" default="Lead" access="global"/>
+    
+    <aura:attribute name="accountButtonName" type="String" default="New Account" access="global"/>
+    <aura:attribute name="accountButtonIconChange" type="String" default="standard:account" access="global"/>
+    <aura:attribute name="accountObjectName" type="String" default="Account" access="global"/>
+    
+    <aura:attribute name="quoteCustomButtonIconChange" type="String" access="global"/>
+    <aura:attribute name="opportunityCustomButtonIconChange" type="String" access="global"/>
+    <aura:attribute name="leadCustomButtonIconChange" type="String" access="global"/>
+    <aura:attribute name="accountCustomButtonIconChange" type="String" access="global"/>
+    <aura:attribute name="customIconRadius" type="String" default="1.5rem;" access="global"/>
+    
+    <div class="slds-grid slds-box slds-wrap" style="{!'border-left: dashed;border-left-color:'+v.borderColor+';background:'+v.backgroundColor + ';'}">
+        <div class="slds-col slds-size_4-of-6">
+            <p class="slds-float_left" style="{!'color:' + v.quickActionTextColor + '; font-size:' + v.quickActionFontSize + 'px ; font-family: ' + v.quickActionFontFamily + ' ; font-weight:bold; '}">Quick Action</p>
+            <div class="quickActionButton">
+                <lightning:icon  iconName="standard:actions_and_buttons" size="medium"  alternativeText="Quick Action" />
+            </div>
+        </div>
+        <div class="slds-col slds-size_2-of-6" style="padding-top: 7px;">
+        </div>
+        <aura:if isTrue="{!v.quoteButtonName}">
+            <div class="slds-col slds-size_4-of-6">
+                <p class="slds-float_left">
+                    <a  href='javascript:;' style="{!'color:' + v.quoteTextColor + '; font-family: ' + v.quoteButtonFontFamily + ' ;'}" onclick="{! c.createQuoteRecord }">
+                        {!v.quoteButtonName} 
+                    </a>
+                </p>
+            </div>
+            <div class="slds-col slds-size_2-of-6">
+                <aura:if isTrue="{!not(empty(v.quoteCustomButtonIconChange))}">
+                    <img class="clickableButton" src="{!'/sfsites/c/resource/'+v.quoteCustomButtonIconChange}" onclick="{! c.createQuoteRecord }" style="{!'border-radius:' + v.customIconRadius + ';width: 2rem;height: 2rem;'}"/>
+                    <aura:set attribute="else">
+                        <lightning:icon class="clickableButton" iconName="{!v.quoteButtonIconChange}" size="small" onclick="{! c.createQuoteRecord }" alternativeText="Approved" />
+                    </aura:set>
+                </aura:if> 
+            </div>
+        </aura:if>
+        <aura:if isTrue="{!v.opportunityButtonName}">
+            <div class="slds-col slds-size_4-of-6">
+                <p class="slds-float_left" >
+                    <a href='javascript:;' style="{!'color:' + v.quoteTextColor + '; font-family: ' + v.quoteButtonFontFamily + ' ;'}" onclick="{! c.createOpportunityRecord }">
+                        {!v.opportunityButtonName} 
+                    </a>
+                </p>
+            </div>
+            <div class="slds-col slds-size_2-of-6">
+                <aura:if isTrue="{!not(empty(v.opportunityCustomButtonIconChange))}">
+                    <img class="clickableButton" src="{!'/sfsites/c/resource/'+v.opportunityCustomButtonIconChange}" onclick="{! c.createOpportunityRecord }" style="{!'border-radius:' + v.customIconRadius + ';width: 2rem;height: 2rem;'}"/>
+                    <aura:set attribute="else">
+                        <lightning:icon class="clickableButton" iconName="{!v.opportunityButtonIconChange}" size="small" onclick="{! c.createOpportunityRecord }" alternativeText="Approved" />
+                    </aura:set>
+                </aura:if> 
+            </div>
+        </aura:if>
+        <aura:if isTrue="{!v.leadButtonName}">
+            <div class="slds-col slds-size_4-of-6">
+                <p class="slds-float_left">
+                    <a href='javascript:;' style="{!'color:' + v.quoteTextColor + '; font-family: ' + v.quoteButtonFontFamily + ' ;'}" onclick="{! c.createLeadRecord }">
+                        {!v.leadButtonName} 
+                    </a>
+                </p>
+            </div>
+            <div class="slds-col slds-size_2-of-6">
+                <aura:if isTrue="{!not(empty(v.leadCustomButtonIconChange))}">
+                    <img class="clickableButton" src="{!'/sfsites/c/resource/'+v.leadCustomButtonIconChange}" onclick="{! c.createLeadRecord }" style="{!'border-radius:' + v.customIconRadius + ';width: 2rem;height: 2rem;'}"/>
+                    <aura:set attribute="else">
+                        <lightning:icon class="clickableButton" iconName="{!v.leadButtonIconChange}" size="small" onclick="{! c.createLeadRecord }" alternativeText="Approved" />
+                    </aura:set>
+                </aura:if> 
+            </div>
+        </aura:if>
+        <aura:if isTrue="{!v.accountButtonName}">
+            <div class="slds-col slds-size_4-of-6">
+                <p class="slds-float_left">
+                    <a href='javascript:;' style="{!'color:' + v.quoteTextColor + '; font-family: ' + v.quoteButtonFontFamily + ' ;'}" onclick="{! c.createAccountRecord }">
+                        {!v.accountButtonName} 
+                    </a>
+                </p>
+            </div>
+            <div class="slds-col slds-size_2-of-6">
+                <aura:if isTrue="{!not(empty(v.accountCustomButtonIconChange))}">
+                    <img class="clickableButton" src="{!'/sfsites/c/resource/'+v.accountCustomButtonIconChange}" onclick="{! c.createAccountRecord }" style="{!'border-radius:' + v.customIconRadius + ';width: 2rem;height: 2rem; '}"/>
+                    <aura:set attribute="else">
+                        <lightning:icon class="clickableButton" iconName="{!v.accountButtonIconChange}" size="small" onclick="{! c.createAccountRecord }" alternativeText="Approved" />
+                    </aura:set>
+                </aura:if> 
+            </div>
+        </aura:if>
+    </div>
+</aura:component>

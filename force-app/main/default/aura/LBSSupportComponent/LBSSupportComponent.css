@@ -1,0 +1,6 @@
+.THIS .myCustomClass input { 
+    text-align: right;
+}
+.THIS .customIcon div{
+    vertical-align: top !important;
+}

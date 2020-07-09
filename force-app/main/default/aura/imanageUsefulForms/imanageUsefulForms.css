@@ -1,0 +1,14 @@
+.THIS .slds-table{
+    
+    position:absolute;
+    width:100%;
+    font-size: initial;
+}
+ 
+.THIS .slds-table th{
+    padding: 16px !important;
+}
+
+.THIS .slds-table td{
+    padding: 16px !important;
+}
